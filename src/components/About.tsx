@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { PieChart, Layers, Smile } from 'lucide-react';
+import { PieChart, Layers, Smile, User, Settings, DollarSign, Activity } from 'lucide-react';
 
 export default function About() {
   return (
@@ -38,123 +38,107 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* 3 Symbolism Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
-            {/* Card 1 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="bg-white p-10 md:p-12 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 group transition-all"
-            >
-              <div className="w-16 h-16 bg-[#FFF0E5] text-[#FF6B00] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
-                <PieChart size={32} strokeWidth={1.5} />
-              </div>
-              <h4 className="text-2xl font-bold mb-2 tracking-tight">A Slice of Insight</h4>
-              <p className="text-sm font-bold text-[#FF6B00] mb-6">통찰 한 조각</p>
-              <p className="text-gray-500 leading-relaxed break-keep font-light">
-                파이 한 조각을 떼어내는 형상은 방대한 데이터 속에서 클라이언트가 바로 먹을 수 있는(실행 가능한) 핵심 통찰만 골라낸다는 의미를 담고 있습니다.
-              </p>
-            </motion.div>
-
-            {/* Card 2 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              whileHover={{ y: -10 }}
-              className="bg-white p-10 md:p-12 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 group transition-all"
-            >
-              <div className="w-16 h-16 bg-[#FFF0E5] text-[#FF6B00] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-300">
-                <Layers size={32} strokeWidth={1.5} />
-              </div>
-              <h4 className="text-2xl font-bold mb-2 tracking-tight">Layered Strategy</h4>
-              <p className="text-sm font-bold text-[#FF6B00] mb-6">층층이 쌓인 전략</p>
-              <p className="text-gray-500 leading-relaxed break-keep font-light">
-                파이의 단면(Layer) 로고를 활용하여 팀의 R&R을 시각화합니다. 견고한 데이터부터 크리에이티브까지 체계적으로 쌓아 올립니다.
-              </p>
-            </motion.div>
-
-            {/* Card 3 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ y: -10 }}
-              className="bg-white p-10 md:p-12 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-100 group transition-all"
-            >
-              <div className="w-16 h-16 bg-[#FFF0E5] text-[#FF6B00] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
-                <Smile size={32} strokeWidth={1.5} />
-              </div>
-              <h4 className="text-2xl font-bold mb-2 tracking-tight">Easy as Pie</h4>
-              <p className="text-sm font-bold text-[#FF6B00] mb-6">식은 죽 먹기</p>
-              <p className="text-gray-500 leading-relaxed break-keep font-light">
-                복잡한 AI 기술을 아이파트너즈를 통해 파이처럼 쉽고 달콤하게 경험하게 해준다는 에이전시만의 서비스 마인드를 강조합니다.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Layered Strategy Interactive Visualization */}
-          <div className="max-w-4xl mx-auto">
+          {/* Why Choose Us Section (Neumorphic Style) */}
+          <div className="mt-32 pt-20">
             <div className="text-center mb-16">
-              <h3 className="text-3xl font-bold tracking-tight">The i-PIE Architecture</h3>
-              <p className="text-gray-500 mt-4">마우스 오버하여 각 레이어의 역할을 확인하세요.</p>
+              <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full shadow-sm border border-gray-100 mb-6">
+                <span className="text-gray-400 text-xs">★</span>
+                <span className="text-xs font-bold tracking-widest text-gray-600 uppercase">BENEFITS</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4 tracking-tight">Why Choose Us</h2>
+              <p className="text-gray-500 text-lg">Partner with an AI agency delivering smart solutions.</p>
             </div>
-            
-            <div className="space-y-4 relative" style={{ perspective: '1000px' }}>
-              {/* Topping */}
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              {/* Card 1 */}
               <motion.div 
-                initial={{ opacity: 0, rotateX: -20, y: 50 }}
-                whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="bg-[#FF6B00] p-8 md:p-10 rounded-3xl text-white text-center relative overflow-hidden group cursor-pointer shadow-lg transform-gpu"
+                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col"
               >
-                <div className="relative z-10 transition-transform duration-500 group-hover:-translate-y-2">
-                  <h4 className="font-black text-3xl tracking-widest uppercase mb-2">Topping</h4>
-                  <p className="font-medium text-white/80">Creative Results</p>
+                <div className="h-48 flex items-center justify-center mb-6">
+                  <div className="w-32 h-32 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(0,0,0,0.02),0_10px_30px_rgba(0,0,0,0.06)] relative flex items-center justify-center">
+                    <div className="w-2.5 h-2.5 bg-gray-800 rounded-full z-10 shadow-sm"></div>
+                    <div className="absolute w-1.5 h-12 bg-gray-200 rounded-full origin-bottom -translate-y-6 rotate-[60deg] shadow-sm"></div>
+                    <div className="absolute top-4 right-6 w-3 h-3 bg-white rounded-full shadow-sm"></div>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out flex items-center justify-center">
-                  <p className="text-lg font-bold">크리에이티브한 결과물</p>
-                </div>
+                <h4 className="text-xl font-medium text-gray-900 mb-3">A Slice of Insight</h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Stay ahead with accurate, real-time performance tracking
+                </p>
               </motion.div>
 
-              {/* Filling */}
+              {/* Card 2 */}
               <motion.div 
-                initial={{ opacity: 0, rotateX: -20, y: 50 }}
-                whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="bg-[#FF9500] p-8 md:p-10 rounded-3xl text-white text-center relative overflow-hidden group cursor-pointer shadow-lg transform-gpu w-[95%] mx-auto"
+                transition={{ delay: 0.1 }}
+                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col"
               >
-                <div className="relative z-10 transition-transform duration-500 group-hover:-translate-y-2">
-                  <h4 className="font-black text-3xl tracking-widest uppercase mb-2">Filling</h4>
-                  <p className="font-medium text-white/80">AI Logic</p>
+                <div className="h-48 flex items-end justify-center gap-3 pb-6 relative">
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-white shadow-sm rounded-full px-3 py-1 text-[10px] font-bold text-gray-600 z-10">80% Automation</div>
+                  <div className="absolute top-1/2 right-2 bg-white shadow-sm rounded-full px-3 py-1 text-[10px] font-bold text-gray-600 z-10">10% Cost</div>
+                  <div className="absolute left-0 bottom-12 -rotate-90 text-[10px] font-bold text-gray-400 tracking-widest">AFTER</div>
+                  
+                  <div className="w-8 h-12 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
+                  <div className="w-8 h-20 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
+                  <div className="w-8 h-32 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
+                  <div className="w-8 h-16 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
+                  <div className="w-8 h-10 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
                 </div>
-                <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out flex items-center justify-center">
-                  <p className="text-lg font-bold">최적화된 AI 로직 및 알고리즘</p>
-                </div>
+                <h4 className="text-xl font-medium text-gray-900 mb-3">Layered Strategy</h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Make smarter moves with accurate, real-time business insights.
+                </p>
               </motion.div>
 
-              {/* Crust */}
+              {/* Card 3 */}
               <motion.div 
-                initial={{ opacity: 0, rotateX: -20, y: 50 }}
-                whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="bg-[#8B5A2B] p-8 md:p-10 rounded-3xl text-white text-center relative overflow-hidden group cursor-pointer shadow-lg transform-gpu w-[90%] mx-auto"
+                transition={{ delay: 0.2 }}
+                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col"
               >
-                <div className="relative z-10 transition-transform duration-500 group-hover:-translate-y-2">
-                  <h4 className="font-black text-3xl tracking-widest uppercase mb-2">Crust</h4>
-                  <p className="font-medium text-white/80">Solid Data (SEO/GA)</p>
+                <div className="h-48 flex items-center justify-center relative">
+                  <div className="w-24 h-24 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.06)] flex items-center justify-center z-10 border border-white">
+                    <Layers className="w-8 h-8 text-black" fill="currentColor" />
+                  </div>
+                  {/* Orbiting users */}
+                  <div className="absolute top-6 left-6 w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-50">
+                    <User className="w-4 h-4 text-gray-800" fill="currentColor" />
+                  </div>
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-50">
+                    <User className="w-4 h-4 text-gray-800" fill="currentColor" />
+                  </div>
+                  <div className="absolute top-1/2 right-6 w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-50">
+                    <User className="w-4 h-4 text-gray-800" fill="currentColor" />
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out flex items-center justify-center">
-                  <p className="text-lg font-bold">견고한 기반이 되는 기존 데이터</p>
-                </div>
+                <h4 className="text-xl font-medium text-gray-900 mb-3">Easy as Pie </h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  connect with your team instantly to track progress and updates
+                </p>
               </motion.div>
+            </div>
+
+            {/* Bottom Tags */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                { name: 'Scalable Solutions', icon: <Layers size={14} /> },
+                { name: 'Personalized Experiences', icon: <Smile size={14} /> },
+                { name: 'Cost Effective', icon: <DollarSign size={14} /> },
+                { name: 'Real-Time Insights', icon: <Activity size={14} /> },
+                { name: 'Automation', icon: <Settings size={14} /> }
+              ].map((tag, i) => (
+                <div key={i} className="bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100 text-sm text-gray-600 flex items-center gap-2">
+                  <span className="text-gray-400">{tag.icon}</span>
+                  {tag.name}
+                </div>
+              ))}
             </div>
           </div>
         </div>
