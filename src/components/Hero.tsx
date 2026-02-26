@@ -16,46 +16,83 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/60"></div>
       </motion.div>
 
-      <div className="relative z-10 text-center text-white px-4 mt-20 w-full max-w-5xl">
-        {/* Staggered Text Reveal */}
-        <div className="flex flex-col items-center justify-center mb-12">
-          <div className="overflow-hidden pb-2">
-            <motion.h1
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
-            >
-              Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF9500]">smarter.</span>
-            </motion.h1>
+      <div className="relative z-10 text-center text-white px-4 mt-20 w-full max-w-6xl">
+        {/* Staggered Text Reveal with Orange Blocks */}
+        <div className="flex flex-col items-center justify-center mb-16 w-full">
+          
+          {/* Row 1 */}
+          <div className="flex w-full items-center justify-center">
+            <div className="w-1/2 flex justify-end overflow-hidden">
+              <motion.h1
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="text-5xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-none pr-1 md:pr-2"
+              >
+                Work
+              </motion.h1>
+            </div>
+            <div className="w-1/2 flex justify-start">
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="h-[3rem] md:h-[4.5rem] lg:h-[7.5rem] bg-[#FF6B00] w-[180px] md:w-[280px] lg:w-[380px] origin-left"
+              />
+            </div>
           </div>
-          <div className="overflow-hidden pb-2">
-            <motion.h1
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
-            >
-              Communicate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF9500]">faster.</span>
-            </motion.h1>
+
+          {/* Row 2 */}
+          <div className="flex w-full items-center justify-center mt-2 md:mt-4">
+            <div className="w-1/2 flex justify-end overflow-hidden">
+              <motion.h1
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="text-5xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-none pr-1 md:pr-2"
+              >
+                Communicate
+              </motion.h1>
+            </div>
+            <div className="w-1/2 flex justify-start">
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="h-[3rem] md:h-[4.5rem] lg:h-[7.5rem] bg-[#FF6B00] w-[220px] md:w-[340px] lg:w-[460px] origin-left"
+              />
+            </div>
           </div>
-          <div className="overflow-hidden pb-2">
-            <motion.h1
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
-            >
-              Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF9500]">further.</span>
-            </motion.h1>
+
+          {/* Row 3 */}
+          <div className="flex w-full items-center justify-center mt-2 md:mt-4">
+            <div className="w-1/2 flex justify-end overflow-hidden">
+              <motion.h1
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="text-5xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-none pr-1 md:pr-2"
+              >
+                Scale
+              </motion.h1>
+            </div>
+            <div className="w-1/2 flex justify-start">
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="h-[3rem] md:h-[4.5rem] lg:h-[7.5rem] bg-[#FF6B00] w-[150px] md:w-[240px] lg:w-[320px] origin-left"
+              />
+            </div>
           </div>
+
         </div>
 
         {/* Subtitle with fade in */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           className="inline-flex flex-col md:flex-row items-center justify-center gap-4 border-t border-white/20 pt-8"
         >
           <div className="bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
