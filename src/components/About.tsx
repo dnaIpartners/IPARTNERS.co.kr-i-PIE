@@ -277,7 +277,7 @@ export default function About() {
                   { name: 'Cost Effective', icon: <DollarSign size={14} /> },
                   { name: 'Quality Upgrades', icon: <Activity size={14} /> },
                   { name: 'Knowledge Assetization', icon: <Settings size={14} /> },
-                  { name: 'Scalable Solutions', icon: <Layers size={14} /> },
+                   { name: 'Scalable Solutions', icon: <Layers size={14} /> },
                   { name: 'Consistent Operations', icon: <Smile size={14} /> },
                   { name: 'Cost Effective', icon: <DollarSign size={14} /> },
                   { name: 'Quality Upgrades', icon: <Activity size={14} /> },
