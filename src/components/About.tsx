@@ -12,9 +12,8 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight break-keep"> 
             <span className="text-black">단순한 파트너를 넘어</span>,<br className="hidden md:block" />IPARTNERS는 지속 가능한 성장을 함께 고민하며 오랫동안 믿고 맡길 수 있는 디지털 혁신 파트너가 되겠습니다.       
           </h2>
-          <p className="text-lg md:text-xl text-gray-500 max-w-4xl break-keep leading-relaxed font-light">        
-            내부 업무 프로세스에 최신 AI 기술을 완벽히 내재화하여 비효율적인 반복 작업을 제거하고, <br className="hidden md:block" />프로젝트 구축 리드타임을 획기적으로 단축합니다. 
-            이렇게 시스템화된 '지능형 워크플로우(AI-Human Intelligent Workflow)'를 통해 전 팀원의 역량을 상향 평준화하며, 변함없이 안정적이고 완성도 높은 최상의 디지털 경험을 만들어 갑니다.
+          <p className="text-lg md:text-xl text-gray-500 max-w-6xl break-keep leading-relaxed font-light">        
+            내부 업무 프로세스에 최신 AI 기술을 완벽히 내재화하여 비효율적인 반복 작업을 제거하고, 프로젝트 구축 리드타임을 획기적으로 단축합니다. 이렇게 시스템화된 '지능형 워크플로우(AI-Human Intelligent Workflow)'를 통해 전 팀원의 역량을 상향 평준화하며, 변함없이 안정적이고 완성도 높은 최상의 디지털 경험을 만들어 갑니다.
           </p>
         </div>
 
@@ -98,7 +97,7 @@ export default function About() {
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">A Slice of Insight</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                파이 한 조각을 떼어내듯, 방대한 데이터 속에서 클라이언트가 바로 실행할 수 있는 핵심 통찰만 골라냅니다.
+                파이 한 조각을 떼어내듯, <br className="hidden md:block" />방대한 데이터 속에서 클라이언트가 바로 실행할 수 있는 핵심 통찰만 골라냅니다.
                 </p>
               </motion.div>
 
@@ -157,7 +156,7 @@ export default function About() {
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">Layered Strategy</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                파이의 단면처럼 전략도 층층이 쌓입니다. 견고한 데이터 기반 위에 AI 로직을 얹고, 그 위에 크리에이티브한 결과물을 완성합니다.
+                파이의 단면처럼 전략도 층층이 쌓입니다. <br className="hidden md:block" />견고한 데이터 기반 위에 AI 로직을 얹고, <br className="hidden md:block" />그 위에 크리에이티브한 결과물을 완성합니다.
                 </p>
               </motion.div>
 
@@ -260,7 +259,7 @@ export default function About() {
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">Easy as Pie</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                 복잡한 AI 기술도 아이파트너즈를 만나면 파이처럼 쉽고 달콤한 경험이 됩니다.
+                 복잡한 AI 기술도 아이파트너즈를 만나면<br className="hidden md:block" /> 파이처럼 쉽고 달콤한 경험이 됩니다.
                 </p>
               </motion.div>
             </div>
