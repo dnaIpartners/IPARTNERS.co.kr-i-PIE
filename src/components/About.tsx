@@ -8,7 +8,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Existing About Content */}
         <div className="mb-20">
-          <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">ABOUT IPARTNERS AI Team</h3>
+          <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">ABOUT IPARTNERS AI DIVISION</h3>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight break-keep"> 
             <span className="text-black">단순한 파트너를 넘어</span>,<br className="hidden md:block" />IPARTNERS는 지속 가능한 성장을 함께 고민하며 오랫동안 믿고 맡길 수 있는 디지털 혁신 파트너가 되겠습니다.       
           </h2>
@@ -27,7 +27,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-sm font-bold tracking-[0.2em] text-[#0033FF] uppercase mb-6">New AI Team</h3>
+              <h3 className="text-sm font-bold tracking-[0.2em] text-[#0033FF] uppercase mb-6">New AI DIVISION</h3>
               <h2 className="text-6xl md:text-8xl font-black text-gray-900 mb-6 tracking-tighter">i-PIE</h2>
               <p className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 font-serif italic">"The Perfect Recipe for Success."</p>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto break-keep leading-relaxed font-light">
@@ -94,19 +94,63 @@ export default function About() {
                 className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
                 <div className="h-48 flex items-center justify-center mb-8 relative w-full">
-                  <div className="w-24 h-24 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.06)] flex items-center justify-center z-10 border border-white">
-                    <Layers className="w-8 h-8 text-black" fill="currentColor" />
+                  {/* Central Element with pulsing rings */}
+                  <div className="relative flex items-center justify-center">
+                    <motion.div 
+                      animate={{ scale: [1, 2.3], opacity: [0.6, 0] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+                      className="absolute w-24 h-24 rounded-full bg-gray-200/60 border border-gray-300/50"
+                    />
+                    <motion.div 
+                      animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: 1.5 }}
+                      className="absolute w-24 h-24 rounded-full bg-gray-200/60 border border-gray-300/50"
+                    />
+                    <div className="w-24 h-24 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.08)] flex items-center justify-center z-10 border border-white relative">
+                      <Layers className="w-10 h-10 text-black" fill="currentColor" />
+                    </div>
                   </div>
-                  {/* Orbiting users */}
-                  <div className="absolute top-6 left-6 w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-50">
-                    <User className="w-4 h-4 text-gray-800" fill="currentColor" />
-                  </div>
-                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-50">
-                    <User className="w-4 h-4 text-gray-800" fill="currentColor" />
-                  </div>
-                  <div className="absolute top-1/2 right-6 w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-50">
-                    <User className="w-4 h-4 text-gray-800" fill="currentColor" />
-                  </div>
+
+                  {/* Floating users */}
+                  <motion.div 
+                    animate={{ y: [0, -20, 0], x: [0, -5, 0], rotate: [0, -8, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+                    className="absolute top-4 left-0 w-12 h-12 bg-[#FDFDFD] rounded-[1rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
+                  >
+                    <User className="w-6 h-6 text-black" fill="currentColor" />
+                  </motion.div>
+                  
+                  <motion.div 
+                    animate={{ y: [0, 25, 0], x: [0, 8, 0], rotate: [0, 10, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute bottom-2 left-1/4 w-10 h-10 bg-[#FDFDFD] rounded-[0.8rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
+                  >
+                    <User className="w-5 h-5 text-black" fill="currentColor" />
+                  </motion.div>
+                  
+                  <motion.div 
+                    animate={{ y: [0, -18, 0], x: [0, 6, 0], rotate: [0, 12, 0] }}
+                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute top-1/2 right-0 -translate-y-1/2 w-11 h-11 bg-[#FDFDFD] rounded-[0.9rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
+                  >
+                    <User className="w-5 h-5 text-black" fill="currentColor" />
+                  </motion.div>
+
+                  <motion.div 
+                    animate={{ y: [0, 15, 0], x: [0, -4, 0], rotate: [0, -6, 0] }}
+                    transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute top-2 right-1/4 w-9 h-9 bg-[#FDFDFD] rounded-[0.7rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
+                  >
+                    <User className="w-4 h-4 text-black" fill="currentColor" />
+                  </motion.div>
+
+                  <motion.div 
+                    animate={{ y: [0, -22, 0], x: [0, 5, 0], rotate: [0, -10, 0] }}
+                    transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                    className="absolute bottom-4 right-1/4 w-10 h-10 bg-[#FDFDFD] rounded-[0.8rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
+                  >
+                    <User className="w-5 h-5 text-black" fill="currentColor" />
+                  </motion.div>
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">Easy as Pie</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
