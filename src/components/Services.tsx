@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { ArrowDown, ArrowUpRight, Cpu, PenTool, Code2, LineChart } from 'lucide-react';
 
 const services = [
@@ -43,30 +43,43 @@ const services = [
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const textRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: textRef,
+    offset: ["start 85%", "center 40%"]
+  });
+
+  const text = "IPARTNERS i-PIE는 에이전시의 실무 방식을 근본적으로 혁신하여, 고객에게 최고의 결과물을 가장 효율적으로 제공하는 지능형 워크플로우(AI-Human Intelligent Workflow)를 실현합니다.";
 
   return (
     <section className="py-24 md:py-32 bg-[#F5F5F5] text-gray-900 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         {/* Header */}
-        <div className="mb-16">
-          <h2 className="text-6xl md:text-8xl font-medium tracking-tighter mb-12 text-gray-900">
-            Our Services
+        <div className="mb-20">
+          <h3 className="text-sm font-bold tracking-tight text-gray-900 mb-8">Our Services</h3>
+          <h2 
+            ref={textRef}
+            className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug break-keep max-w-full tracking-tight"
+          >
+            {text.split("").map((char, index) => {
+              const totalChars = text.length;
+              const start = index / totalChars;
+              const end = start + (1 / totalChars);
+              
+              const opacity = useTransform(scrollYProgress, [start, end], [0.3, 1]);
+              const color = useTransform(scrollYProgress, [start, end], ["#9ca3af", "#111827"]);
+
+              return (
+                <motion.span 
+                  key={index} 
+                  style={{ opacity, color }}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
           </h2>
-          
-          <div className="flex flex-col md:flex-row gap-8 md:items-start justify-between pt-8">
-            <div className="flex gap-6 items-start">
-               <div className="border-l-2 border-[#FF6B00] pl-4">
-                 <div className="text-gray-900 font-mono text-lg">002</div>
-                 <div className="text-gray-500 font-mono text-sm mt-1">plat-form</div>
-               </div>
-               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight max-w-2xl tracking-tight text-gray-800 break-keep">
-                 인간의 전략적 통찰과 AI의 생산성을 결합한 서비스를 소개합니다.
-               </h3>
-            </div>
-            <p className="text-gray-500 max-w-xs text-sm leading-relaxed break-keep">
-              고객의 디지털 자산을 통합적으로 관리하는 원스톱 서비스
-            </p>
-          </div>
         </div>
 
         {/* Interactive Accordion Area */}
