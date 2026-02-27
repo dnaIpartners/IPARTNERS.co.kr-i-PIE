@@ -37,18 +37,8 @@ export default function About() {
               </p>
             </motion.div>
           </div>
-
           {/* Why Choose Us Section (Neumorphic Style) */}
-          <div className="mt-32 pt-20">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full shadow-sm border border-gray-100 mb-6">
-                <span className="text-gray-400 text-xs">★</span>
-                <span className="text-xs font-bold tracking-widest text-gray-600 uppercase">BENEFITS</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4 tracking-tight">Why Choose Us</h2>
-              <p className="text-gray-500 text-lg">Partner with an AI agency delivering smart solutions.</p>
-            </div>
-
+          <div className="mt-32 pt-20">          
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {/* Card 1 */}
               <motion.div 
