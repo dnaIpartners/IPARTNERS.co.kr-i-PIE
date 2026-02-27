@@ -78,52 +78,81 @@ export default function About() {
                 className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
                 <div className="h-48 flex items-center justify-center mb-8 relative w-full">
-                  <div className="relative w-32 h-32">
+                  {/* Background grid/data representation */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                    <div className="w-32 h-32 border border-gray-300 rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
+                    <div className="absolute w-24 h-24 border border-gray-300 rounded-full border-dashed animate-[spin_15s_linear_infinite_reverse]"></div>
+                  </div>
+
+                  <div className="relative w-32 h-32 flex items-center justify-center">
                     {/* Base Pie (Full circle) */}
-                    <div className="absolute inset-0 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.08)] border border-white"></div>
+                    <div className="absolute inset-0 rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100"></div>
                     
-                    {/* Recessed area for the slice (Quarter circle top-right) */}
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-gray-100/50 rounded-tr-full shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05)] border-l border-b border-gray-200/50 overflow-hidden">
+                    {/* Recessed area for the slice */}
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gray-50 rounded-tr-full shadow-[inset_2px_2px_8px_rgba(0,0,0,0.05)] border-l border-b border-gray-200/50 overflow-hidden">
                        {/* Glowing Insight Dot inside the recess */}
-                       <div className="relative w-full h-full">
+                       <div className="relative w-full h-full flex items-end justify-start pb-2 pl-2">
                          <motion.div 
-                           animate={{ scale: [0.8, 1.4, 0.8], opacity: [0.4, 0.8, 0.4] }}
-                           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                           className="absolute bottom-2 left-2 w-6 h-6 bg-[#0033FF] rounded-full blur-[4px]"
+                           animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                           className="absolute w-8 h-8 bg-[#0033FF] rounded-full blur-md"
                          />
-                         <div className="absolute bottom-3 left-3 w-4 h-4 bg-[#0033FF] rounded-full shadow-[0_0_10px_rgba(0,51,255,0.5)]"></div>
+                         <div className="relative z-10 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(0,51,255,0.8)]"></div>
                        </div>
                     </div>
 
-                    {/* The Floating Slice */}
+                    {/* The Floating Slice (Extracting Insight) */}
                     <motion.div 
-                      animate={{ x: [0, 18, 0], y: [0, -18, 0], rotate: [0, 15, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                      className="absolute top-0 right-0 w-16 h-16 bg-[#FDFDFD] rounded-tr-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),-4px_4px_15px_rgba(0,0,0,0.08)] border border-white origin-bottom-left flex items-center justify-center z-20"
+                      animate={{ 
+                        x: [0, 24, 24, 0], 
+                        y: [0, -24, -24, 0], 
+                        rotate: [0, 15, 15, 0],
+                        scale: [1, 1.1, 1.1, 1]
+                      }}
+                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", times: [0, 0.3, 0.7, 1] }}
+                      className="absolute top-0 right-0 w-16 h-16 bg-white rounded-tr-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),-8px_8px_20px_rgba(0,0,0,0.1)] border border-gray-100 origin-bottom-left flex items-center justify-center z-20 overflow-hidden"
                     >
-                      {/* A small accent on the slice to make it look like data */}
-                      <div className="w-3 h-3 rounded-full bg-gray-200 shadow-inner mb-4 ml-4"></div>
+                      {/* Data lines inside the extracted slice */}
+                      <div className="absolute bottom-3 left-3 flex flex-col gap-1.5 rotate-45 origin-bottom-left">
+                        <motion.div 
+                          animate={{ width: ['0px', '20px', '20px', '0px'] }}
+                          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", times: [0, 0.3, 0.7, 1] }}
+                          className="h-1 bg-[#0033FF] rounded-full"
+                        />
+                        <motion.div 
+                          animate={{ width: ['0px', '12px', '12px', '0px'] }}
+                          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", times: [0, 0.3, 0.7, 1], delay: 0.1 }}
+                          className="h-1 bg-[#0033FF]/60 rounded-full"
+                        />
+                        <motion.div 
+                          animate={{ width: ['0px', '16px', '16px', '0px'] }}
+                          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", times: [0, 0.3, 0.7, 1], delay: 0.2 }}
+                          className="h-1 bg-[#0033FF]/30 rounded-full"
+                        />
+                      </div>
                     </motion.div>
                     
                     {/* Center dot to anchor the pie */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-[#FDFDFD] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1),inset_0_2px_2px_rgba(255,255,255,1)] border border-white z-30"></div>
+                    <div className="absolute w-8 h-8 bg-white rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.1)] border border-gray-50 z-30 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-gray-200 rounded-full"></div>
+                    </div>
                   </div>
                   
                   {/* Floating data particles around */}
                   <motion.div 
-                    animate={{ y: [0, -12, 0], opacity: [0.2, 0.6, 0.2] }}
-                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-6 left-12 w-2 h-2 rounded-full bg-gray-400"
+                    animate={{ y: [0, -15, 0], opacity: [0, 1, 0], scale: [0.5, 1, 0.5] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-8 right-12 w-2 h-2 rounded-full bg-[#0033FF]"
                   />
                   <motion.div 
-                    animate={{ y: [0, 15, 0], opacity: [0.2, 0.6, 0.2] }}
-                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute bottom-8 right-10 w-3 h-3 rounded-full bg-gray-300"
+                    animate={{ y: [0, -20, 0], opacity: [0, 0.8, 0], scale: [0.5, 1.2, 0.5] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute top-12 right-20 w-1.5 h-1.5 rounded-full bg-[#0033FF]/60"
                   />
                   <motion.div 
-                    animate={{ y: [0, -8, 0], opacity: [0.1, 0.4, 0.1] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute top-1/2 left-6 w-4 h-4 rounded-full bg-gray-200"
+                    animate={{ y: [0, -10, 0], opacity: [0, 0.6, 0], scale: [0.5, 0.8, 0.5] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute top-4 right-16 w-2.5 h-2.5 rounded-full bg-[#0033FF]/40"
                   />
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">A Slice of Insight</h4>
@@ -278,19 +307,40 @@ export default function About() {
 
                   {/* Central Element: Easy as Pie */}
                   <div className="relative z-10 flex items-center justify-center">
+                    {/* Glowing background */}
                     <motion.div 
-                      animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute w-24 h-24 rounded-full bg-[#0033FF]/10 blur-md"
+                      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute w-32 h-32 rounded-full bg-[#0033FF]/10 blur-xl"
                     />
-                    <div className="w-20 h-20 relative flex items-center justify-center">
+                    
+                    <div className="w-24 h-24 relative flex items-center justify-center">
                       {/* Base Pie */}
-                      <div className="absolute inset-0 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.08)] border border-white"></div>
+                      <div className="absolute inset-0 rounded-full bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-gray-100"></div>
                       
-                      {/* Recessed slice (top-right) */}
-                      <div className="absolute top-0 right-0 w-10 h-10 bg-gray-100/60 rounded-tr-full shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05)] border-l border-b border-gray-200/60"></div>
+                      {/* Recessed slot for the slice */}
+                      <div className="absolute top-0 right-0 w-12 h-12 bg-gray-50 rounded-tr-full shadow-[inset_3px_3px_8px_rgba(0,0,0,0.05)] border-l border-b border-gray-200/50"></div>
                       
-                      <span className="relative z-10 font-black text-[#0033FF] tracking-tighter text-base -translate-x-1 translate-y-1">i-PIE</span>
+                      {/* Animated Slice */}
+                      <motion.div 
+                        animate={{ 
+                          x: [20, 0, 0, 20], 
+                          y: [-20, 0, 0, -20],
+                          rotate: [15, 0, 0, 15],
+                          opacity: [0.8, 1, 1, 0.8]
+                        }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", times: [0, 0.2, 0.8, 1] }}
+                        className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-[#0033FF] to-[#001188] rounded-tr-full shadow-[4px_-4px_15px_rgba(0,51,255,0.3)] border border-white/30 z-20 origin-bottom-left"
+                      />
+
+                      {/* Center Hub */}
+                      <motion.div 
+                        animate={{ scale: [0.95, 1.05, 1.05, 0.95], boxShadow: ['0 2px 10px rgba(0,0,0,0.05)', '0 5px 20px rgba(0,51,255,0.2)', '0 5px 20px rgba(0,51,255,0.2)', '0 2px 10px rgba(0,0,0,0.05)'] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", times: [0, 0.2, 0.8, 1] }}
+                        className="relative z-30 bg-white w-14 h-14 rounded-full flex items-center justify-center border border-gray-50"
+                      >
+                        <span className="font-black text-[#0033FF] tracking-tighter text-base">i-PIE</span>
+                      </motion.div>
                     </div>
                   </div>
                 </div>
