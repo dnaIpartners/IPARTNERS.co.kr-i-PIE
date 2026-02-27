@@ -7,7 +7,7 @@ export default function About() {
     <section className="py-20 md:py-40 bg-[#F8F8F8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Existing About Content */}
-        <div className="mb-32">
+        <div className="mb-20">
           <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">ABOUT IPARTNERS AI Team</h3>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight break-keep"> 
             <span className="text-black">단순한 파트너를 넘어</span>,<br className="hidden md:block" />IPARTNERS는 지속 가능한 성장을 함께 고민하며 오랫동안 믿고 맡길 수 있는 디지털 혁신 파트너가 되겠습니다.       
@@ -20,14 +20,14 @@ export default function About() {
 
 
         {/* New i-PIE Section */}
-        <div className="mt-30 pt-32 border-t border-gray-200">
+        <div className="mt-20 pt-24 border-t border-gray-200">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-sm font-bold tracking-[0.2em] text-[#FF6B00] uppercase mb-6">New AI Team</h3>
+              <h3 className="text-sm font-bold tracking-[0.2em] text-[#0033FF] uppercase mb-6">New AI Team</h3>
               <h2 className="text-6xl md:text-8xl font-black text-gray-900 mb-6 tracking-tighter">i-PIE</h2>
               <p className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 font-serif italic">"The Perfect Recipe for Success."</p>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto break-keep leading-relaxed font-light">
