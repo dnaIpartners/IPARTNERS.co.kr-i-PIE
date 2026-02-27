@@ -1,16 +1,47 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, MotionValue } from 'motion/react';
 import { PieChart, Layers, Smile, User, Settings, DollarSign, Activity, Cpu, Database, Cloud } from 'lucide-react';
 
+const AnimatedChar = ({ char, progress, range }: { char: string, progress: MotionValue<number>, range: [number, number] }) => {
+  const color = useTransform(progress, range, ["#D1D5DB", "#000000"]);
+  return (
+    <motion.span style={{ color }}>
+      {char}
+    </motion.span>
+  );
+};
+
 export default function About() {
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: textRef,
+    offset: ["start 85%", "end 50%"]
+  });
+
+  const text1 = "단순한 파트너를 넘어,";
+  const text2 = "IPARTNERS는 지속 가능한 성장을 함께 고민하며 오랫동안 믿고 맡길 수 있는 디지털 혁신 파트너가 되겠습니다.";
+  const totalChars = text1.length + text2.length;
+
   return (
     <section className="py-20 md:py-40 bg-[#F8F8F8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Existing About Content */}
         <div className="mb-20">
           <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">ABOUT IPARTNERS AI DIVISION</h3>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight break-keep"> 
-            <span className="text-black">단순한 파트너를 넘어</span>,<br className="hidden md:block" />IPARTNERS는 지속 가능한 성장을 함께 고민하며 오랫동안 믿고 맡길 수 있는 디지털 혁신 파트너가 되겠습니다.       
+          <h2 ref={textRef} className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight break-keep"> 
+            <span>
+              {text1.split('').map((char, i) => {
+                const start = i / totalChars;
+                const end = start + (1 / totalChars);
+                return <AnimatedChar key={i} char={char} progress={scrollYProgress} range={[start, end]} />;
+              })}
+            </span>
+            <br className="hidden md:block" />
+            {text2.split('').map((char, i) => {
+              const start = (text1.length + i) / totalChars;
+              const end = start + (1 / totalChars);
+              return <AnimatedChar key={i} char={char} progress={scrollYProgress} range={[start, end]} />;
+            })}
           </h2>
           <p className="text-lg md:text-xl text-gray-500 max-w-7xl break-keep leading-relaxed font-light">        
             내부 프로세스에 최신 AI 기술을 완벽히 내재화해 비효율적인 반복 작업을 없애고, 구축 리드타임을 획기적으로 단축합니다. <br className="hidden md:block" />시스템화된 '지능형 워크플로우(AI-Human Intelligent Workflow)'로 전 팀원의 역량을 상향 평준화하여, 변함없이 안정적이고 완성도 높은 최상의 디지털 경험을 제공합니다.
