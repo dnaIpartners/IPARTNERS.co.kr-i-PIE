@@ -273,15 +273,15 @@ export default function About() {
               >
                 {[
                   { name: 'Scalable Solutions', icon: <Layers size={14} /> },
-                  { name: 'Personalized Experiences', icon: <Smile size={14} /> },
+                  { name: 'Consistent Operations', icon: <Smile size={14} /> },
                   { name: 'Cost Effective', icon: <DollarSign size={14} /> },
-                  { name: 'Real-Time Insights', icon: <Activity size={14} /> },
-                  { name: 'Automation', icon: <Settings size={14} /> },
+                  { name: 'Quality Upgrades', icon: <Activity size={14} /> },
+                  { name: 'Knowledge Assetization', icon: <Settings size={14} /> },
                   { name: 'Scalable Solutions', icon: <Layers size={14} /> },
-                  { name: 'Personalized Experiences', icon: <Smile size={14} /> },
+                  { name: 'Consistent Operations', icon: <Smile size={14} /> },
                   { name: 'Cost Effective', icon: <DollarSign size={14} /> },
-                  { name: 'Real-Time Insights', icon: <Activity size={14} /> },
-                  { name: 'Automation', icon: <Settings size={14} /> }
+                  { name: 'Quality Upgrades', icon: <Activity size={14} /> },
+                  { name: 'Knowledge Assetization', icon: <Settings size={14} /> },
                 ].map((tag, i) => (
                   <div key={i} className="bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100 text-sm text-gray-600 flex items-center gap-2 shrink-0">
                     <span className="text-gray-400">{tag.icon}</span>
