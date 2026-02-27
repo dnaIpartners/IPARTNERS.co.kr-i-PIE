@@ -37,8 +37,9 @@ export default function About() {
               </p>
             </motion.div>
           </div>
+
           {/* Why Choose Us Section (Neumorphic Style) */}
-          <div className="mt-32 pt-20">          
+          <div className="mt-32 pt-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {/* Card 1 */}
               <motion.div 

@@ -5,7 +5,7 @@ import FluidBackground from './FluidBackground';
 
 export default function Hero() {
   return (
-    <section className="relative h-[812px] lg:h-[1080px] w-full flex items-center justify-center overflow-hidden bg-[#F8F8F8]">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#F8F8F8]">
       {/* WebGL Fluid Background */}
       <FluidBackground />
 
@@ -19,7 +19,7 @@ export default function Hero() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
             >
-              Work
+              Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001641] to-[#0033FF]">smarter.</span>
             </motion.h1>
           </div>
           <div className="overflow-hidden pb-2">
@@ -29,7 +29,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
             >
-              Communicate
+              Communicate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001641] to-[#0033FF]">faster.</span>
             </motion.h1>
           </div>
           <div className="overflow-hidden pb-2">
@@ -39,7 +39,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
             >
-              Scale
+              Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001641] to-[#0033FF]">further.</span>
             </motion.h1>
           </div>
         </div>
