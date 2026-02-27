@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { PieChart, Layers, Smile, User, Settings, DollarSign, Activity } from 'lucide-react';
+import { PieChart, Layers, Smile, User, Settings, DollarSign, Activity, Cpu, Database, Cloud } from 'lucide-react';
 
 export default function About() {
   return (
@@ -48,11 +48,53 @@ export default function About() {
                 className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
                 <div className="h-48 flex items-center justify-center mb-8 relative w-full">
-                  <div className="w-32 h-32 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(0,0,0,0.02),0_10px_30px_rgba(0,0,0,0.06)] relative flex items-center justify-center">
-                    <div className="w-2.5 h-2.5 bg-gray-800 rounded-full z-10 shadow-sm"></div>
-                    <div className="absolute w-1.5 h-12 bg-gray-200 rounded-full origin-bottom -translate-y-6 rotate-[60deg] shadow-sm"></div>
-                    <div className="absolute top-4 right-6 w-3 h-3 bg-white rounded-full shadow-sm"></div>
+                  <div className="relative w-32 h-32">
+                    {/* Base Pie (Full circle) */}
+                    <div className="absolute inset-0 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.08)] border border-white"></div>
+                    
+                    {/* Recessed area for the slice (Quarter circle top-right) */}
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gray-100/50 rounded-tr-full shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05)] border-l border-b border-gray-200/50 overflow-hidden">
+                       {/* Glowing Insight Dot inside the recess */}
+                       <div className="relative w-full h-full">
+                         <motion.div 
+                           animate={{ scale: [0.8, 1.4, 0.8], opacity: [0.4, 0.8, 0.4] }}
+                           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                           className="absolute bottom-2 left-2 w-6 h-6 bg-[#0033FF] rounded-full blur-[4px]"
+                         />
+                         <div className="absolute bottom-3 left-3 w-4 h-4 bg-[#0033FF] rounded-full shadow-[0_0_10px_rgba(0,51,255,0.5)]"></div>
+                       </div>
+                    </div>
+
+                    {/* The Floating Slice */}
+                    <motion.div 
+                      animate={{ x: [0, 18, 0], y: [0, -18, 0], rotate: [0, 15, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                      className="absolute top-0 right-0 w-16 h-16 bg-[#FDFDFD] rounded-tr-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),-4px_4px_15px_rgba(0,0,0,0.08)] border border-white origin-bottom-left flex items-center justify-center z-20"
+                    >
+                      {/* A small accent on the slice to make it look like data */}
+                      <div className="w-3 h-3 rounded-full bg-gray-200 shadow-inner mb-4 ml-4"></div>
+                    </motion.div>
+                    
+                    {/* Center dot to anchor the pie */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-[#FDFDFD] rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.1),inset_0_2px_2px_rgba(255,255,255,1)] border border-white z-30"></div>
                   </div>
+                  
+                  {/* Floating data particles around */}
+                  <motion.div 
+                    animate={{ y: [0, -12, 0], opacity: [0.2, 0.6, 0.2] }}
+                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-6 left-12 w-2 h-2 rounded-full bg-gray-400"
+                  />
+                  <motion.div 
+                    animate={{ y: [0, 15, 0], opacity: [0.2, 0.6, 0.2] }}
+                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute bottom-8 right-10 w-3 h-3 rounded-full bg-gray-300"
+                  />
+                  <motion.div 
+                    animate={{ y: [0, -8, 0], opacity: [0.1, 0.4, 0.1] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute top-1/2 left-6 w-4 h-4 rounded-full bg-gray-200"
+                  />
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">A Slice of Insight</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -68,16 +110,50 @@ export default function About() {
                 transition={{ delay: 0.1 }}
                 className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
-                <div className="h-48 flex items-end justify-center gap-3 pb-6 mb-8 relative w-full">
-                  <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-white shadow-sm rounded-full px-3 py-1 text-[10px] font-bold text-gray-600 z-10">80% Automation</div>
-                  <div className="absolute top-1/2 right-2 bg-white shadow-sm rounded-full px-3 py-1 text-[10px] font-bold text-gray-600 z-10">10% Cost</div>
-                  <div className="absolute left-0 bottom-12 -rotate-90 text-[10px] font-bold text-gray-400 tracking-widest">AFTER</div>
-                  
-                  <div className="w-8 h-12 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
-                  <div className="w-8 h-20 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
-                  <div className="w-8 h-32 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
-                  <div className="w-8 h-16 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
-                  <div className="w-8 h-10 bg-[#FDFDFD] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_4px_10px_rgba(0,0,0,0.05)] rounded-t-xl border border-white"></div>
+                <div className="h-48 flex flex-col items-center justify-center mb-8 relative w-full">
+                  {/* Floating particles */}
+                  <motion.div 
+                    animate={{ y: [0, -15, 0], opacity: [0.3, 0.8, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-6 left-8 w-3 h-3 rounded-full bg-[#0033FF]/20 border border-[#0033FF]/30"
+                  />
+                  <motion.div 
+                    animate={{ y: [0, 15, 0], opacity: [0.3, 0.8, 0.3] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute bottom-8 right-8 w-4 h-4 rounded-full bg-[#0033FF]/20 border border-[#0033FF]/30"
+                  />
+
+                  <div className="relative w-full h-full flex flex-col items-center justify-center">
+                    {/* Top Layer: Creative */}
+                    <motion.div 
+                      animate={{ y: [0, -12, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+                      className="absolute z-30 w-32 h-14 bg-[#FDFDFD] rounded-2xl shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_15px_25px_rgba(0,0,0,0.08)] border border-white flex items-center justify-center"
+                      style={{ top: '20px' }}
+                    >
+                      <span className="text-[11px] font-bold text-gray-800 tracking-widest">CREATIVE</span>
+                    </motion.div>
+                    
+                    {/* Middle Layer: AI Logic */}
+                    <motion.div 
+                      animate={{ y: [0, -6, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                      className="absolute z-20 w-40 h-14 bg-[#FDFDFD] rounded-2xl shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_15px_25px_rgba(0,0,0,0.08)] border border-white flex items-center justify-center"
+                      style={{ top: '60px' }}
+                    >
+                      <span className="text-[11px] font-bold text-gray-600 tracking-widest">AI LOGIC</span>
+                    </motion.div>
+
+                    {/* Bottom Layer: Data */}
+                    <motion.div 
+                      animate={{ y: [0, 0, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                      className="absolute z-10 w-48 h-14 bg-[#FDFDFD] rounded-2xl shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_15px_25px_rgba(0,0,0,0.08)] border border-white flex items-center justify-center"
+                      style={{ top: '100px' }}
+                    >
+                      <span className="text-[11px] font-bold text-gray-400 tracking-widest">DATA BASE</span>
+                    </motion.div>
+                  </div>
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">Layered Strategy</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -94,63 +170,93 @@ export default function About() {
                 className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
                 <div className="h-48 flex items-center justify-center mb-8 relative w-full">
-                  {/* Central Element with pulsing rings */}
-                  <div className="relative flex items-center justify-center">
+                  {/* Orbiting Track */}
+                  <div className="absolute w-36 h-36 rounded-full border border-gray-100/50"></div>
+                  
+                  {/* Orbiting Elements Container */}
+                  <motion.div 
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute w-36 h-36 rounded-full z-20"
+                  >
+                    {/* Tech Icon 1 (0 deg) */}
                     <motion.div 
-                      animate={{ scale: [1, 2.3], opacity: [0.6, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
-                      className="absolute w-24 h-24 rounded-full bg-gray-200/60 border border-gray-300/50"
-                    />
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-10 h-10 bg-[#FDFDFD] rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_5px_15px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white"
+                      style={{ top: '-20px', left: '52px' }}
+                    >
+                      <Settings className="w-4 h-4 text-gray-400" />
+                    </motion.div>
+                    
+                    {/* Tech Icon 2 (060 deg) */}
                     <motion.div 
-                      animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: 1.5 }}
-                      className="absolute w-24 h-24 rounded-full bg-gray-200/60 border border-gray-300/50"
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-10 h-10 bg-[#FDFDFD] rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_5px_15px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white"
+                      style={{ top: '16px', left: '114px' }}
+                    >
+                      <Activity className="w-4 h-4 text-gray-400" />
+                    </motion.div>
+
+                    {/* Tech Icon 3 (120 deg) */}
+                    <motion.div 
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-10 h-10 bg-[#FDFDFD] rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_5px_15px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white"
+                      style={{ top: '88px', left: '114px' }}
+                    >
+                      <Layers className="w-4 h-4 text-gray-400" />
+                    </motion.div>
+
+                    {/* Tech Icon 4 (180 deg) */}
+                    <motion.div 
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-10 h-10 bg-[#FDFDFD] rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_5px_15px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white"
+                      style={{ top: '124px', left: '52px' }}
+                    >
+                      <Cpu className="w-4 h-4 text-gray-400" />
+                    </motion.div>
+
+                    {/* Tech Icon 5 (240 deg) */}
+                    <motion.div 
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-10 h-10 bg-[#FDFDFD] rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_5px_15px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white"
+                      style={{ top: '88px', left: '-10px' }}
+                    >
+                      <Database className="w-4 h-4 text-gray-400" />
+                    </motion.div>
+
+                    {/* Tech Icon 6 (300 deg) */}
+                    <motion.div 
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute w-10 h-10 bg-[#FDFDFD] rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_5px_15px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white"
+                      style={{ top: '16px', left: '-10px' }}
+                    >
+                      <Cloud className="w-4 h-4 text-gray-400" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Central Element: Easy as Pie */}
+                  <div className="relative z-10 flex items-center justify-center">
+                    <motion.div 
+                      animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute w-24 h-24 rounded-full bg-[#0033FF]/10 blur-md"
                     />
-                    <div className="w-24 h-24 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.08)] flex items-center justify-center z-10 border border-white relative">
-                      <Layers className="w-10 h-10 text-black" fill="currentColor" />
+                    <div className="w-20 h-20 relative flex items-center justify-center">
+                      {/* Base Pie */}
+                      <div className="absolute inset-0 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.08)] border border-white"></div>
+                      
+                      {/* Recessed slice (top-right) */}
+                      <div className="absolute top-0 right-0 w-10 h-10 bg-gray-100/60 rounded-tr-full shadow-[inset_2px_2px_6px_rgba(0,0,0,0.05)] border-l border-b border-gray-200/60"></div>
+                      
+                      <span className="relative z-10 font-black text-[#0033FF] tracking-tighter text-base -translate-x-1 translate-y-1">i-PIE</span>
                     </div>
                   </div>
-
-                  {/* Floating users */}
-                  <motion.div 
-                    animate={{ y: [0, -20, 0], x: [0, -5, 0], rotate: [0, -8, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 }}
-                    className="absolute top-4 left-0 w-12 h-12 bg-[#FDFDFD] rounded-[1rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
-                  >
-                    <User className="w-6 h-6 text-black" fill="currentColor" />
-                  </motion.div>
-                  
-                  <motion.div 
-                    animate={{ y: [0, 25, 0], x: [0, 8, 0], rotate: [0, 10, 0] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute bottom-2 left-1/4 w-10 h-10 bg-[#FDFDFD] rounded-[0.8rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
-                  >
-                    <User className="w-5 h-5 text-black" fill="currentColor" />
-                  </motion.div>
-                  
-                  <motion.div 
-                    animate={{ y: [0, -18, 0], x: [0, 6, 0], rotate: [0, 12, 0] }}
-                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute top-1/2 right-0 -translate-y-1/2 w-11 h-11 bg-[#FDFDFD] rounded-[0.9rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
-                  >
-                    <User className="w-5 h-5 text-black" fill="currentColor" />
-                  </motion.div>
-
-                  <motion.div 
-                    animate={{ y: [0, 15, 0], x: [0, -4, 0], rotate: [0, -6, 0] }}
-                    transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                    className="absolute top-2 right-1/4 w-9 h-9 bg-[#FDFDFD] rounded-[0.7rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
-                  >
-                    <User className="w-4 h-4 text-black" fill="currentColor" />
-                  </motion.div>
-
-                  <motion.div 
-                    animate={{ y: [0, -22, 0], x: [0, 5, 0], rotate: [0, -10, 0] }}
-                    transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                    className="absolute bottom-4 right-1/4 w-10 h-10 bg-[#FDFDFD] rounded-[0.8rem] shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_8px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-white z-20"
-                  >
-                    <User className="w-5 h-5 text-black" fill="currentColor" />
-                  </motion.div>
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">Easy as Pie</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -159,20 +265,31 @@ export default function About() {
               </motion.div>
             </div>
 
-            {/* Bottom Tags */}
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                { name: 'Scalable Solutions', icon: <Layers size={14} /> },
-                { name: 'Personalized Experiences', icon: <Smile size={14} /> },
-                { name: 'Cost Effective', icon: <DollarSign size={14} /> },
-                { name: 'Real-Time Insights', icon: <Activity size={14} /> },
-                { name: 'Automation', icon: <Settings size={14} /> }
-              ].map((tag, i) => (
-                <div key={i} className="bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100 text-sm text-gray-600 flex items-center gap-2">
-                  <span className="text-gray-400">{tag.icon}</span>
-                  {tag.name}
-                </div>
-              ))}
+            {/* Bottom Tags (Marquee) */}
+            <div className="relative flex overflow-hidden w-full py-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+              <motion.div
+                className="flex whitespace-nowrap gap-3 w-max"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                {[
+                  { name: 'Scalable Solutions', icon: <Layers size={14} /> },
+                  { name: 'Personalized Experiences', icon: <Smile size={14} /> },
+                  { name: 'Cost Effective', icon: <DollarSign size={14} /> },
+                  { name: 'Real-Time Insights', icon: <Activity size={14} /> },
+                  { name: 'Automation', icon: <Settings size={14} /> },
+                  { name: 'Scalable Solutions', icon: <Layers size={14} /> },
+                  { name: 'Personalized Experiences', icon: <Smile size={14} /> },
+                  { name: 'Cost Effective', icon: <DollarSign size={14} /> },
+                  { name: 'Real-Time Insights', icon: <Activity size={14} /> },
+                  { name: 'Automation', icon: <Settings size={14} /> }
+                ].map((tag, i) => (
+                  <div key={i} className="bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100 text-sm text-gray-600 flex items-center gap-2 shrink-0">
+                    <span className="text-gray-400">{tag.icon}</span>
+                    {tag.name}
+                  </div>
+                ))}
+              </motion.div>
             </div>
           </div>
         </div>
