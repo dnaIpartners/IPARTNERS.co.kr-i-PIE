@@ -18,8 +18,8 @@ export default function About() {
     offset: ["start 85%", "end 50%"]
   });
 
-  const text1 = "단순한 파트너를 넘어,";
-  const text2 = "IPARTNERS는 지속 가능한 성장을 함께 고민하며 오랫동안 믿고 맡길 수 있는 디지털 혁신 파트너가 되겠습니다.";
+  const text1 = "기존 에이전시의 한계를 넘어,";
+  const text2 = "IPARTNERS는 완벽한 AI 전환(AX)을 통해 지속 가능한 성장을 함께 이끄는 디지털 혁신 파트너가 되겠습니다.";
   const totalChars = text1.length + text2.length;
 
   return (
