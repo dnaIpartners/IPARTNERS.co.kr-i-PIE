@@ -8,14 +8,13 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Existing About Content */}
         <div className="mb-32">
-          <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">ABOUT IPARTNERS</h3>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight break-keep">
-            IPARTNERS는 <span className="text-black">단</span>기 성과보다<br />
-            오랫동안 신뢰받는 파트너가 되는 것을 우선으로 생각합니다.
+          <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">ABOUT IPARTNERS AI Team</h3>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight break-keep"> 
+            <span className="text-black">단순한 파트너를 넘어</span>, IPARTNERS는 지속 가능한 성장을 함께 고민하며 오랫동안 믿고 맡길 수 있는 디지털 혁신 파트너가 되겠습니다.       
           </h2>
-          <p className="text-lg md:text-xl text-gray-500 max-w-4xl break-keep leading-relaxed font-light">
-            오랜 시간 축적된 경험과 안정적인 조직 운영으로 브랜드의 정체성을 강화하고,<br className="hidden md:block" />
-            비즈니스 성과로 이어지는 디지털 경험을 만들어 갑니다.
+          <p className="text-lg md:text-xl text-gray-500 max-w-4xl break-keep leading-relaxed font-light">        
+            내부 업무 프로세스에 최신 AI 기술을 완벽히 내재화하여 비효율적인 반복 작업을 제거하고, 프로젝트 구축 리드타임을 획기적으로 단축합니다. <br className="hidden md:block" />
+            이렇게 시스템화된 '지능형 워크플로우(AI-Human Intelligent Workflow)'를 통해 전 팀원의 역량을 상향 평준화하며, 변함없이 안정적이고 완성도 높은 최상의 디지털 경험을 만들어 갑니다.
           </p>
         </div>
 
