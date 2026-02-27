@@ -16,7 +16,7 @@ function JellySphere() {
 
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={mesh} args={[2.5, 128, 128]} scale={1.2}>
+      <Sphere ref={mesh} args={[2.5, 128, 128]} scale={1.08}>
         <MeshDistortMaterial
           color="#ffffff"
           attach="material"
