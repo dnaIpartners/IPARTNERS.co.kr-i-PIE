@@ -153,35 +153,41 @@ export default function About() {
                     className="absolute bottom-8 right-8 w-4 h-4 rounded-full bg-[#0033FF]/20 border border-[#0033FF]/30"
                   />
 
-                  <div className="relative w-full h-full flex flex-col items-center justify-center">
-                    {/* Top Layer: Creative */}
+                  <div className="relative w-full h-full flex flex-col items-center justify-center" style={{ perspective: '1000px' }}>
                     <motion.div 
-                      animate={{ y: [0, -12, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 }}
-                      className="absolute z-30 w-32 h-14 bg-[#FDFDFD] rounded-2xl shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_15px_25px_rgba(0,0,0,0.08)] border border-white flex items-center justify-center"
-                      style={{ top: '20px' }}
+                      className="relative w-24 h-24 mt-12"
+                      initial={{ rotateX: 60, rotateZ: -45 }}
+                      style={{ transformStyle: 'preserve-3d' }}
                     >
-                      <span className="text-[11px] font-bold text-gray-800 tracking-widest">CREATIVE</span>
-                    </motion.div>
-                    
-                    {/* Middle Layer: AI Logic */}
-                    <motion.div 
-                      animate={{ y: [0, -6, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                      className="absolute z-20 w-40 h-14 bg-[#FDFDFD] rounded-2xl shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_15px_25px_rgba(0,0,0,0.08)] border border-white flex items-center justify-center"
-                      style={{ top: '60px' }}
-                    >
-                      <span className="font-black text-[#0033FF] tracking-tighter text-base">i-PIE</span>
-                    </motion.div>
+                      {/* Bottom Layer: Data */}
+                      <motion.div 
+                        animate={{ z: [0, -5, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                        className="absolute inset-0 bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center shadow-sm"
+                      >
+                        <span className="text-[9px] font-bold text-gray-400 tracking-widest rotate-45">DATA BASE</span>
+                      </motion.div>
 
-                    {/* Bottom Layer: Data */}
-                    <motion.div 
-                      animate={{ y: [0, 0, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                      className="absolute z-10 w-48 h-14 bg-[#FDFDFD] rounded-2xl shadow-[inset_0_2px_5px_rgba(255,255,255,1),0_15px_25px_rgba(0,0,0,0.08)] border border-white flex items-center justify-center"
-                      style={{ top: '100px' }}
-                    >
-                      <span className="text-[11px] font-bold text-gray-400 tracking-widest">DATA BASE</span>
+                      {/* Middle Layer: AI Logic */}
+                      <motion.div 
+                        animate={{ 
+                          z: [30, 40, 30], 
+                          boxShadow: ['0 5px 15px rgba(0,51,255,0.05)', '0 10px 25px rgba(0,51,255,0.15)', '0 5px 15px rgba(0,51,255,0.05)'] 
+                        }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                        className="absolute inset-0 bg-[#0033FF]/5 border border-[#0033FF]/30 backdrop-blur-sm rounded-xl flex items-center justify-center"
+                      >
+                        <span className="font-black text-[#0033FF] tracking-tighter text-base rotate-45">i-PIE</span>
+                      </motion.div>
+
+                      {/* Top Layer: Creative */}
+                      <motion.div 
+                        animate={{ z: [60, 80, 60] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+                        className="absolute inset-0 bg-white/80 border border-white backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg"
+                      >
+                        <span className="text-[9px] font-bold text-gray-800 tracking-widest rotate-45">CREATIVE</span>
+                      </motion.div>
                     </motion.div>
                   </div>
                 </div>
