@@ -19,7 +19,7 @@ export default function Hero() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
             >
-              Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF9500]">smarter.</span>
+              Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001641] to-[#0033FF]">smarter.</span>
             </motion.h1>
           </div>
           <div className="overflow-hidden pb-2">
@@ -29,7 +29,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
             >
-              Communicate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF9500]">faster.</span>
+              Communicate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001641] to-[#0033FF]">faster.</span>
             </motion.h1>
           </div>
           <div className="overflow-hidden pb-2">
@@ -39,7 +39,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1]"
             >
-              Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#FF9500]">further.</span>
+              Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#001641] to-[#0033FF]">further.</span>
             </motion.h1>
           </div>
         </div>
