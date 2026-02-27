@@ -85,13 +85,13 @@ export default function FAQ() {
                       </div>
                     </button>
                     
-                    <AnimatePresence>
+                    <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
                           className="overflow-hidden"
                         >
                           <div className="pb-10 pl-[3.5rem] md:pl-[4.5rem] pr-4 md:pr-12">
