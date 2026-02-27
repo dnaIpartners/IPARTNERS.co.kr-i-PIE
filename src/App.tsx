@@ -18,8 +18,6 @@ export default function App() {
       <Values />
       <Services />
       <FAQ />
-      <Partnership />
-      <CTA />
       <Footer />
     </div>
   );

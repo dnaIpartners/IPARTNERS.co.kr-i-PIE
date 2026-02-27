@@ -4,7 +4,7 @@ import { PieChart, Layers, Smile, User, Settings, DollarSign, Activity } from 'l
 
 export default function About() {
   return (
-    <section className="py-24 md:py-40 bg-[#F8F8F8] overflow-hidden">
+    <section className="py-20 md:py-40 bg-[#F8F8F8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Existing About Content */}
         <div className="mb-32">
@@ -21,8 +21,8 @@ export default function About() {
 
 
         {/* New i-PIE Section */}
-        <div className="mt-40 pt-32 border-t border-gray-200">
-          <div className="text-center mb-24">
+        <div className="mt-30 pt-32 border-t border-gray-200">
+          <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -39,16 +39,16 @@ export default function About() {
           </div>
 
           {/* Why Choose Us Section (Neumorphic Style) */}
-          <div className="mt-32 pt-20">
+          <div className="mt-8 pt-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {/* Card 1 */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col"
+                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
-                <div className="h-48 flex items-center justify-center mb-6">
+                <div className="h-48 flex items-center justify-center mb-8 relative w-full">
                   <div className="w-32 h-32 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(0,0,0,0.02),0_10px_30px_rgba(0,0,0,0.06)] relative flex items-center justify-center">
                     <div className="w-2.5 h-2.5 bg-gray-800 rounded-full z-10 shadow-sm"></div>
                     <div className="absolute w-1.5 h-12 bg-gray-200 rounded-full origin-bottom -translate-y-6 rotate-[60deg] shadow-sm"></div>
@@ -57,7 +57,7 @@ export default function About() {
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">A Slice of Insight</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Stay ahead with accurate, real-time performance tracking
+                파이 한 조각을 떼어내듯, 방대한 데이터 속에서 클라이언트가 바로 실행할 수 있는 핵심 통찰만 골라냅니다.
                 </p>
               </motion.div>
 
@@ -67,9 +67,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col"
+                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
-                <div className="h-48 flex items-end justify-center gap-3 pb-6 relative">
+                <div className="h-48 flex items-end justify-center gap-3 pb-6 mb-8 relative w-full">
                   <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-white shadow-sm rounded-full px-3 py-1 text-[10px] font-bold text-gray-600 z-10">80% Automation</div>
                   <div className="absolute top-1/2 right-2 bg-white shadow-sm rounded-full px-3 py-1 text-[10px] font-bold text-gray-600 z-10">10% Cost</div>
                   <div className="absolute left-0 bottom-12 -rotate-90 text-[10px] font-bold text-gray-400 tracking-widest">AFTER</div>
@@ -82,7 +82,7 @@ export default function About() {
                 </div>
                 <h4 className="text-xl font-medium text-gray-900 mb-3">Layered Strategy</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Make smarter moves with accurate, real-time business insights.
+                파이의 단면처럼 전략도 층층이 쌓입니다. 견고한 데이터 기반 위에 AI 로직을 얹고, 그 위에 크리에이티브한 결과물을 완성합니다.
                 </p>
               </motion.div>
 
@@ -92,9 +92,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col"
+                className="bg-[#FDFDFD] p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white flex flex-col items-center text-center"
               >
-                <div className="h-48 flex items-center justify-center relative">
+                <div className="h-48 flex items-center justify-center mb-8 relative w-full">
                   <div className="w-24 h-24 rounded-full bg-[#FDFDFD] shadow-[inset_0_2px_10px_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.06)] flex items-center justify-center z-10 border border-white">
                     <Layers className="w-8 h-8 text-black" fill="currentColor" />
                   </div>
@@ -109,9 +109,9 @@ export default function About() {
                     <User className="w-4 h-4 text-gray-800" fill="currentColor" />
                   </div>
                 </div>
-                <h4 className="text-xl font-medium text-gray-900 mb-3">Easy as Pie </h4>
+                <h4 className="text-xl font-medium text-gray-900 mb-3">Easy as Pie</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  connect with your team instantly to track progress and updates
+                 복잡한 AI 기술도 아이파트너즈를 만나면 파이처럼 쉽고 달콤한 경험이 됩니다.
                 </p>
               </motion.div>
             </div>
