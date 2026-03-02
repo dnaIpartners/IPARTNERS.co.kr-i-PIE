@@ -33,7 +33,7 @@ export default function InsightsNews() {
   const [activeId, setActiveId] = useState("01");
 
   return (
-    <section className="py-16 md:py-20 bg-white text-gray-900">
+    <section className="py-24 md:py-32 bg-white text-gray-900">
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Centered Header */}

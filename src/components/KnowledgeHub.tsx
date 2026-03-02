@@ -3,19 +3,22 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 const aiKeywords = [
-  "LLM", "Prompt Eng.", "RAG", "Fine-tuning", "Data Pipeline",
-  "UX/UI AI", "Machine Learning", "NLP", "Computer Vision",
+  "UI Prompt", "Prompt Eng.", "UX Prompt", "Fine-tuning", "Data Pipeline",
+  "UX/UI AI", "Machine Learning", "i-PIE", "IPARTNERS",
   "AI Agents", "Knowledge Graph", "Vector DB", "Generative AI",
-  "AutoML", "Deep Learning"
+  "근식", "Deep Learning"
 ];
 
 export default function KnowledgeHub() {
   // Generate floating prompt documents
-  const documents = Array.from({ length: 15 }).map((_, i) => {
-    const startY = -20 - Math.random() * 20;
-    const startX = Math.random() * 80 + 10; // 10% to 90%
-    const midY = 10 + Math.random() * 30;
-    const midX = 20 + Math.random() * 60;
+  const documents = Array.from({ length: 45 }).map((_, i) => {
+    // Start from a much wider area (outside the container)
+    const startY = -30 - Math.random() * 40; // -30% to -70%
+    const startX = -50 + Math.random() * 200; // -50% to 150%
+    
+    // Midpoint to create a curved path towards the center
+    const midY = 10 + Math.random() * 40; // 10% to 50%
+    const midX = 20 + Math.random() * 60; // 20% to 80%
     
     return {
       id: i,
@@ -23,16 +26,16 @@ export default function KnowledgeHub() {
       startX: `${startX}%`,
       midY: `${midY}%`,
       midX: `${midX}%`,
-      delay: Math.random() * 5,
-      duration: 4 + Math.random() * 3,
-      scale: 0.7 + Math.random() * 0.3,
-      startRotate: (Math.random() - 0.5) * 60,
+      delay: Math.random() * 8, // Spread out the start times
+      duration: 4 + Math.random() * 4, // 4 to 8 seconds
+      scale: 0.5 + Math.random() * 0.4,
+      startRotate: (Math.random() - 0.5) * 120, // More rotation
       text: aiKeywords[i % aiKeywords.length]
     };
   });
 
   return (
-    <section className="py-20 md:py-40 bg-white overflow-hidden relative">
+    <section className="py-24 md:py-32 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center justify-center gap-16">
           
@@ -82,7 +85,7 @@ export default function KnowledgeHub() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#FDFDFD] w-full h-full rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex items-center justify-center relative overflow-hidden"
+              className="w-full h-full flex items-center justify-center relative"
             >
               {/* Background Glow */}
               <motion.div 
@@ -97,19 +100,19 @@ export default function KnowledgeHub() {
                   key={doc.id}
                   initial={{ top: doc.startY, left: doc.startX, x: "-50%", opacity: 0, scale: doc.scale, rotate: doc.startRotate }}
                   animate={{ 
-                    top: [doc.startY, doc.midY, '70%'], 
+                    top: [doc.startY, doc.midY, '75%'], 
                     left: [doc.startX, doc.midX, '50%'],
                     x: ["-50%", "-50%", "-50%"],
                     opacity: [0, 1, 1, 0],
-                    scale: [doc.scale, doc.scale, doc.scale * 0.3],
-                    rotate: [doc.startRotate, doc.startRotate, 0]
+                    scale: [doc.scale, doc.scale, doc.scale * 0.2],
+                    rotate: [doc.startRotate, doc.startRotate / 2, 0]
                   }}
                   transition={{ 
                     duration: doc.duration, 
                     repeat: Infinity, 
                     delay: doc.delay, 
                     ease: "easeInOut",
-                    times: [0, 0.4, 1]
+                    times: [0, 0.5, 1]
                   }}
                   className="absolute w-24 h-16 bg-white rounded-md shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col z-10 overflow-hidden"
                 >

@@ -23,7 +23,7 @@ export default function About() {
   const totalChars = text1.length + text2.length;
 
   return (
-    <section className="py-20 md:py-40 bg-[#F8F8F8] overflow-hidden">
+    <section className="py-24 md:py-32 bg-[#F8F8F8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Existing About Content */}
         <div className="mb-20">
