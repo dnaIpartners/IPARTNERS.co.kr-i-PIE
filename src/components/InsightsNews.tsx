@@ -1,103 +1,160 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowUpRight } from 'lucide-react';
 
 const boards = [
   {
     id: "01",
     title: "UI / UX 프롬프트",
-    desc: "실무에 즉시 적용 가능한 UI/UX 기획 및 디자인 프롬프트 가이드와 활용 사례를 공유합니다."
+    desc: "실무에 즉시 적용 가능한 UI/UX 기획 및 디자인 프롬프트 가이드와 활용 사례를 공유합니다.",
+    tag: "PROMPT GUIDE",
+    image: "https://picsum.photos/seed/uiux/800/1000",
+    imageLabel: "UI/UX DESIGN"
   },
   {
     id: "02",
     title: "트레이닝 AI",
-    desc: "아이파트너즈만의 AI 모델 학습 노하우, 파인튜닝 기법 및 트레이닝 방법론을 소개합니다."
+    desc: "아이파트너즈만의 AI 모델 학습 노하우, 파인튜닝 기법 및 트레이닝 방법론을 소개합니다.",
+    tag: "AI TRAINING",
+    image: "https://picsum.photos/seed/training/800/1000",
+    imageLabel: "MODEL FINE-TUNING"
   },
   {
     id: "03",
-    title: "AX Trends",
-    desc: "글로벌 AI 트렌드 분석 및 성공적인 디지털 비즈니스 혁신(AX) 사례를 심도 있게 다룹니다."
+    title: "AX TRENDS",
+    desc: "글로벌 AI 트렌드 분석 및 성공적인 디지털 비즈니스 혁신(AX) 사례를 심도 있게 다룹니다.",
+    tag: "TREND ANALYSIS",
+    image: "https://picsum.photos/seed/trends/800/1000",
+    imageLabel: "DIGITAL TRANSFORMATION"
   }
 ];
 
 export default function InsightsNews() {
+  const [activeId, setActiveId] = useState("01");
+
   return (
-    <section className="py-24 md:py-32 bg-white text-gray-900">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-16 md:py-20 bg-white text-gray-900">
+      <div className="max-w-[1400px] mx-auto px-6">
         
-        {/* Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-sm border border-gray-100 mb-6"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#0033FF]"></div>
-            <span className="text-xs font-bold tracking-widest text-gray-600 uppercase">Insights & News</span>
-          </motion.div>
-          
+        {/* Centered Header */}
+        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 mb-6 tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 flex items-baseline justify-center uppercase"
           >
-            INSIGHTS & NEWS
+            Insights & News<span className="text-[#0033FF] text-4xl md:text-6xl">.</span>
           </motion.h2>
-          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-gray-500 max-w-2xl break-keep leading-relaxed"
+            transition={{ delay: 0.1 }}
+            className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest"
           >
-            디지털 비즈니스의 최전선에서 발견한 인사이트와 아이파트너즈의 최신 소식을 전합니다.<br className="hidden md:block" />
-            AX(AI Experience)시대를 항해하는 나침반이 되어드리겠습니다.
+            DIGITAL BUSINESS & AX COMPASS (2024-2025)
           </motion.p>
         </div>
 
-        {/* Board List */}
-        <div className="w-full">
-          <div className="border-t border-gray-200">
-            {boards.map((board, index) => (
-              <motion.a
-                href="#board"
-                key={board.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group block border-b border-gray-200 py-10 hover:bg-[#FDFDFD] transition-colors relative overflow-hidden"
-              >
-                {/* Hover Background Accent */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0033FF]/0 via-[#0033FF]/[0.02] to-[#0033FF]/[0.05] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-                
-                <div className="relative flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center px-4 md:px-8">
-                  <span className="text-gray-300 font-mono text-xl font-medium shrink-0 group-hover:text-[#0033FF]/40 transition-colors">
-                    {board.id}
-                  </span>
-                  
-                  <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-3 group-hover:text-[#0033FF] transition-colors">
-                      {board.title}
-                    </h3>
-                    <p className="text-gray-500 text-base md:text-lg font-light leading-relaxed break-keep">
-                      {board.desc}
-                    </p>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
+          
+          {/* Left Column: List */}
+          <div className="w-full lg:w-1/2">
+            {/* List Items */}
+            <div className="border-t border-gray-200">
+              {boards.map((board) => {
+                const isActive = activeId === board.id;
+                return (
+                  <div 
+                    key={board.id}
+                    className="border-b border-gray-200 py-6 md:py-8 cursor-pointer group"
+                    onMouseEnter={() => setActiveId(board.id)}
+                    onClick={() => setActiveId(board.id)}
+                  >
+                    <div className="flex gap-6 md:gap-8">
+                      <span className={`font-mono text-sm md:text-base font-bold mt-2 transition-colors duration-300 ${isActive ? 'text-[#0033FF]' : 'text-gray-300'}`}>
+                        {board.id}
+                      </span>
+                      <div className="flex-1">
+                        <h3 className={`text-3xl md:text-4xl font-black tracking-tighter uppercase transition-colors duration-300 ${isActive ? 'text-gray-900' : 'text-gray-200 group-hover:text-gray-400'}`}>
+                          {board.title}
+                        </h3>
+                        
+                        <AnimatePresence>
+                          {isActive && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pt-6 pb-2">
+                                <p className="text-gray-500 text-sm md:text-base leading-relaxed break-keep mb-6 max-w-md font-medium">
+                                  {board.desc}
+                                </p>
+                                <div className="flex flex-wrap items-center gap-6">
+                                  <span className="text-[10px] md:text-xs font-bold tracking-widest text-gray-500 uppercase bg-gray-100 px-3 py-1.5 rounded-sm">
+                                    {board.tag}
+                                  </span>
+                                  <a href="#view" className="flex items-center gap-2 text-[10px] md:text-xs font-bold tracking-widest text-gray-900 uppercase hover:text-[#0033FF] transition-colors">
+                                    VIEW BOARD <ArrowUpRight className="w-4 h-4" />
+                                  </a>
+                                </div>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
                   </div>
-                  
-                  <div className="shrink-0 w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-[#0033FF] group-hover:border-[#0033FF] transition-all duration-300 shadow-sm group-hover:shadow-[0_4px_15px_rgba(0,51,255,0.3)]">
-                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-                  </div>
-                </div>
-              </motion.a>
-            ))}
+                );
+              })}
+            </div>
           </div>
+
+          {/* Right Column: Image Thumbnail */}
+          <div className="w-full lg:w-1/2 relative min-h-[300px] md:min-h-[400px] lg:min-h-0">
+            <div className="absolute inset-0 w-full h-full overflow-hidden bg-gray-100">
+              <AnimatePresence mode="wait">
+                {boards.map((board) => {
+                  if (board.id !== activeId) return null;
+                  return (
+                    <motion.div
+                      key={board.id}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="absolute inset-0"
+                    >
+                      <img 
+                        src={board.image} 
+                        alt={board.title}
+                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        referrerPolicy="no-referrer"
+                      />
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+                      
+                      {/* Image Label */}
+                      <div className="absolute bottom-8 left-8 right-8 pointer-events-none">
+                        <span className="text-[#0033FF] text-[10px] font-bold tracking-widest uppercase mb-2 block">
+                          CATEGORY
+                        </span>
+                        <h4 className="text-white text-xl md:text-2xl font-bold tracking-tight uppercase">
+                          {board.imageLabel}
+                        </h4>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </div>
+          </div>
+          
         </div>
-        
       </div>
     </section>
   );
