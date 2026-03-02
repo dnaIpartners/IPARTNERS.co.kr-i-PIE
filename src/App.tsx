@@ -4,6 +4,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Values from './components/Values';
 import Services from './components/Services';
+import KnowledgeHub from './components/KnowledgeHub';
+import InsightsNews from './components/InsightsNews';
 import FAQ from './components/FAQ';
 import Partnership from './components/Partnership';
 import CTA from './components/CTA';
@@ -15,6 +17,8 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
+      <KnowledgeHub />
+      <InsightsNews />
       <FAQ />
       <Footer />
     </div>
