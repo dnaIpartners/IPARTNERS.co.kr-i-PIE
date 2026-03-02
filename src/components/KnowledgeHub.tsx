@@ -41,7 +41,7 @@ export default function KnowledgeHub() {
           
           {/* Top Content */}
           <div className="w-full max-w-3xl z-20 text-center flex flex-col items-center">
-            <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">KNOWLEDGE ASSET PLATFORM</h3>
+            <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">KNOWLEDGE</h3>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -62,20 +62,6 @@ export default function KnowledgeHub() {
             >
               아이파트너즈의 모든 산출물과 인사이트가 축적되는 i-AX Knowledge Hub. 언제 어디서나 필요한 지식을 빠르게 탐색하고 활용하세요.
             </motion.p>
-            
-            <motion.a 
-              href="https://ai.ipartners.co.kr"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center justify-center gap-2 bg-[#0033FF] hover:bg-[#0022AA] text-white px-8 py-4 rounded-full font-medium text-base transition-transform hover:scale-105 shadow-[0_10px_20px_rgba(0,51,255,0.2)]"
-            >
-              Hub 방문하기
-              <ArrowRight className="w-4 h-4" />
-            </motion.a>
           </div>
 
           {/* Bottom Content - Folder Animation Area */}
@@ -162,9 +148,14 @@ export default function KnowledgeHub() {
                     </div>
 
                     {/* Label */}
-                    <div className="ml-8 bg-white/90 px-3 py-1.5 rounded-md border border-gray-100 shadow-sm text-[#0033FF] font-bold text-xs md:text-sm tracking-wide">
+                    <a 
+                      href="https://ai.ipartners.co.kr" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="ml-8 bg-white/90 px-3 py-1.5 rounded-md border border-gray-100 shadow-sm text-[#0033FF] font-bold text-xs md:text-sm tracking-wide hover:bg-gray-50 transition-colors cursor-pointer"
+                    >
                       ai.ipartners.co.kr
-                    </div>
+                    </a>
                   </div>
 
                   {/* Floating Badge */}

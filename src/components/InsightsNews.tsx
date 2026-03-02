@@ -38,6 +38,14 @@ export default function InsightsNews() {
         
         {/* Centered Header */}
         <div className="flex flex-col items-center text-center mb-12 md:mb-16">
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6"
+          >
+            INSIGHTS NEWS
+          </motion.h3>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

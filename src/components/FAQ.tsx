@@ -38,17 +38,14 @@ export default function FAQ() {
         
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <motion.div 
+          <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-sm border border-gray-100 mb-6"
+            className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6"
           >
-            <div className="w-4 h-4 rounded-full bg-gray-200 flex items-center justify-center text-[10px] font-bold text-gray-500">
-              ?
-            </div>
-            <span className="text-xs font-bold tracking-widest text-gray-600 uppercase">FAQS</span>
-          </motion.div>
+            FAQ
+          </motion.h3>
           
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
