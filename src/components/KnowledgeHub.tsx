@@ -40,7 +40,7 @@ export default function KnowledgeHub() {
         <div className="flex flex-col items-center justify-center gap-16">
           
           {/* Top Content */}
-          <div className="w-full max-w-[880px] z-20 text-center flex flex-col items-center">
+          <div className="w-full max-w-[980px] z-20 text-center flex flex-col items-center">
             <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">KNOWLEDGE</h3>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -48,8 +48,8 @@ export default function KnowledgeHub() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 uppercase text-center break-keep"
             > 
-              수많은 프로젝트 경험과 AI 활용 노하우,<br className="hidden md:block" />
-              당신을 위한 완벽한 디지털 자산으로 완성하다<br className="hidden md:block" />
+              프로젝트 경험과 AI 활용 노하우.<br className="hidden md:block" />
+              디지털 자산으로 완성<br className="hidden md:block" />
             </motion.h2>
             
             <motion.p 
@@ -59,7 +59,7 @@ export default function KnowledgeHub() {
               transition={{ delay: 0.1 }}
               className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest mb-10 break-keep max-w-2xl"
             >
-              아이파트너즈의 모든 산출물과 인사이트가 축적되는 i-AX Knowledge Hub. <br className="hidden md:block" />언제 어디서나 필요한 지식을 빠르게 탐색하고 활용하세요.
+              아이파트너즈의 모든 산출물과 인사이트가 축적되는 i-PIE Knowledge Hub. <br className="hidden md:block" />언제 어디서나 필요한 지식을 빠르게 탐색하고 활용하세요.
             </motion.p>
           </div>
 
