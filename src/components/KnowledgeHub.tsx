@@ -10,8 +10,8 @@ const aiKeywords = [
 ];
 
 export default function KnowledgeHub() {
-  // Generate floating prompt documents
-  const documents = Array.from({ length: 45 }).map((_, i) => {
+  // Generate floating prompt documents (Reduced count for mobile performance)
+  const documents = Array.from({ length: 20 }).map((_, i) => {
     // Start from a much wider area (outside the container)
     const startY = -30 - Math.random() * 40; // -30% to -70%
     const startX = -50 + Math.random() * 200; // -50% to 150%
@@ -27,7 +27,7 @@ export default function KnowledgeHub() {
       midY: `${midY}%`,
       midX: `${midX}%`,
       delay: Math.random() * 8, // Spread out the start times
-      duration: 4.8 + Math.random() * 4.8, // 4.8 to 9.6 seconds (20% slower)
+      duration: 6 + Math.random() * 6, // 6 to 12 seconds (Slower for smoother performance)
       scale: 0.5 + Math.random() * 0.4,
       startRotate: (Math.random() - 0.5) * 120, // More rotation
       text: aiKeywords[i % aiKeywords.length]
@@ -99,13 +99,14 @@ export default function KnowledgeHub() {
                     ease: "easeInOut",
                     times: [0, 0.5, 1]
                   }}
+                  style={{ willChange: 'top, left, transform, opacity' }}
                   className="absolute w-24 h-16 bg-white rounded-md shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col z-10 overflow-hidden"
                 >
                   <div className="h-4 bg-gray-50 border-b border-gray-100 flex items-center px-1.5 gap-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0033FF]/40"></div>
                     <div className="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
                   </div>
-                  <div className="flex-1 flex items-center justify-center bg-white/50 backdrop-blur-sm px-1 text-center">
+                  <div className="flex-1 flex items-center justify-center bg-white/90 px-1 text-center">
                     <span className="text-[9px] font-bold text-gray-600 leading-tight">{doc.text}</span>
                   </div>
                 </motion.div>

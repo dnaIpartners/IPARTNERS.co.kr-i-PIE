@@ -20,16 +20,7 @@ export default function Navbar() {
         </div>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-bold tracking-widest">
-          <a href="#works" className="hover:opacity-70 transition-opacity">WORKS</a>
-          <a href="#about" className="hover:opacity-70 transition-opacity">ABOUT</a>
-          <a href="#careers" className="hover:opacity-70 transition-opacity">CAREERS</a>
-          <a href="#contact" className="hover:opacity-70 transition-opacity">CONTACT</a>
-          <a href="#brochure" className="flex items-center gap-1 hover:opacity-70 transition-opacity">
-            <ArrowDownRight className="w-4 h-4" />
-            BROCHURE
-          </a>
-        </div>
+      
 
         {/* Mobile menu button */}
         <div className="md:hidden">
