@@ -60,8 +60,8 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="inline-flex flex-col md:flex-row items-center justify-center gap-4 border-t border-gray-300 pt-8"
         >
-          <p className="text-lg md:text-xl font-light text-gray-600 break-keep leading-relaxed">
-            <strong className="text-gray-900 font-bold tracking-widest text-sm mr-2">i-PIE&trade;</strong> — 브랜드가 일하고, 소통하고, 성장하는 방식을 AI로 재설계합니다.
+          <p className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest break-keep leading-relaxed text-center">
+            브랜드가 일하고, 소통하고, 성장하는 방식을 AI로 재설계합니다.
           </p>
         </motion.div>
       </div>

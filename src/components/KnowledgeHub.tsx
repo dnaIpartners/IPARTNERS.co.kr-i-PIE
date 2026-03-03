@@ -60,7 +60,7 @@ export default function KnowledgeHub() {
               transition={{ delay: 0.1 }}
               className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest mb-10 break-keep max-w-2xl"
             >
-              아이파트너즈의 모든 산출물과 인사이트가 축적되는 i-AX Knowledge Hub. 언제 어디서나 필요한 지식을 빠르게 탐색하고 활용하세요.
+              아이파트너즈의 모든 산출물과 인사이트가 축적되는 i-AX Knowledge Hub. <br className="hidden md:block" />언제 어디서나 필요한 지식을 빠르게 탐색하고 활용하세요.
             </motion.p>
           </div>
 
