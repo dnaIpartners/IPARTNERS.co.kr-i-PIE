@@ -37,7 +37,7 @@ export default function InsightsNews() {
       <div className="max-w-[1400px] mx-auto px-6">
         
         {/* Header */}
-        <div className="flex flex-col items-start text-left mb-12 md:mb-16">
+        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function InsightsNews() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 flex items-baseline justify-start uppercase"
+            className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 flex items-baseline justify-center uppercase"
           >
             Insights & News<span className="text-[#0033FF] text-4xl md:text-6xl">.</span>
           </motion.h2>
