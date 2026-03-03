@@ -27,7 +27,7 @@ export default function KnowledgeHub() {
       midY: `${midY}%`,
       midX: `${midX}%`,
       delay: Math.random() * 8, // Spread out the start times
-      duration: 4 + Math.random() * 4, // 4 to 8 seconds
+      duration: 4.8 + Math.random() * 4.8, // 4.8 to 9.6 seconds (20% slower)
       scale: 0.5 + Math.random() * 0.4,
       startRotate: (Math.random() - 0.5) * 120, // More rotation
       text: aiKeywords[i % aiKeywords.length]
@@ -46,11 +46,11 @@ export default function KnowledgeHub() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight break-keep"
+              className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 uppercase text-center break-keep"
             >
               파편화된 지식은 그만,<br className="hidden md:block" />
               수많은 프로젝트 노하우를<br className="hidden md:block" />
-              단 하나의 플랫폼에.
+              단 하나의 플랫폼에<span className="text-[#0033FF] text-4xl md:text-6xl">.</span>
             </motion.h2>
             
             <motion.p 
@@ -58,7 +58,7 @@ export default function KnowledgeHub() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl text-gray-500 max-w-2xl break-keep leading-relaxed font-light mb-10"
+              className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest mb-10 break-keep max-w-2xl"
             >
               아이파트너즈의 모든 산출물과 인사이트가 축적되는 i-AX Knowledge Hub. 언제 어디서나 필요한 지식을 빠르게 탐색하고 활용하세요.
             </motion.p>

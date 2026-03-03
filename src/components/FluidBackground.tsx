@@ -1,11 +1,15 @@
 import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Environment, MeshDistortMaterial, Sphere, Float } from '@react-three/drei';
 import * as THREE from 'three';
 import { motion } from 'motion/react';
 
 function JellySphere() {
   const mesh = useRef<THREE.Mesh>(null);
+  const { size } = useThree();
+  
+  // Reduce scale by 20% on mobile screens (width < 768px)
+  const scale = size.width < 768 ? 1.08 * 0.8 : 1.08;
   
   useFrame((state) => {
     if (mesh.current) {
@@ -16,7 +20,7 @@ function JellySphere() {
 
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={mesh} args={[2.5, 128, 128]} scale={1.08}>
+      <Sphere ref={mesh} args={[2.5, 128, 128]} scale={scale}>
         <MeshDistortMaterial
           color="#ffffff"
           attach="material"

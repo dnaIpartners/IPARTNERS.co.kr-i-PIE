@@ -52,9 +52,9 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 mb-6 tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 flex items-baseline justify-center uppercase"
           >
-            Questions? Answers!
+            Questions? Answers<span className="text-[#0033FF] text-4xl md:text-6xl">.</span>
           </motion.h2>
           
           <motion.p 
@@ -62,7 +62,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-500"
+            className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest"
           >
             AI 도입에 대해 자주 묻는 핵심 질문들을 확인해보세요.
           </motion.p>
