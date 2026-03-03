@@ -40,17 +40,16 @@ export default function KnowledgeHub() {
         <div className="flex flex-col items-center justify-center gap-16">
           
           {/* Top Content */}
-          <div className="w-full max-w-3xl z-20 text-center flex flex-col items-center">
+          <div className="w-full max-w-[880px] z-20 text-center flex flex-col items-center">
             <h3 className="text-xs font-bold tracking-widest text-gray-400 uppercase mb-6">KNOWLEDGE</h3>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 uppercase text-center break-keep"
-            >
-              파편화된 지식은 그만,<br className="hidden md:block" />
-              수많은 프로젝트 노하우를<br className="hidden md:block" />
-              단 하나의 플랫폼에<span className="text-[#0033FF] text-4xl md:text-6xl">.</span>
+            > 
+              수많은 프로젝트 경험과 AI 활용 노하우,<br className="hidden md:block" />
+              당신을 위한 완벽한 디지털 자산으로 완성하다<br className="hidden md:block" />
             </motion.h2>
             
             <motion.p 
